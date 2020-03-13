@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AppCenterCrash-UI_Example' do
+  pod 'AppCenterCrash-UI', :path => '../'
+
+  target 'AppCenterCrash-UI_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
