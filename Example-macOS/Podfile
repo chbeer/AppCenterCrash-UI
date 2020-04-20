@@ -1,0 +1,17 @@
+use_frameworks!
+
+platform :osx, '10.10'
+
+target 'AppCenterCrash-UI_Example' do
+  pod 'AppCenterCrash-UI', :path => '../'
+
+  target 'AppCenterCrash-UI_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
+
+pre_install do |installer|
+  Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
+end

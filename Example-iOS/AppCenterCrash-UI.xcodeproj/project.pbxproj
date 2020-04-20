@@ -27,15 +27,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		345F5BFB73F9999D7E93C61D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		345F5BFB73F9999D7E93C61D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4C5EE92EC92339BBF65F8683 /* Pods-AppCenterCrash-UI_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCenterCrash-UI_Example.release.xcconfig"; path = "Target Support Files/Pods-AppCenterCrash-UI_Example/Pods-AppCenterCrash-UI_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4E42222583B2D7FDE9DC9B05 /* Pods_AppCenterCrash_UI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppCenterCrash_UI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		53AC5627EF747863657C4C2D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		53AC5627EF747863657C4C2D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		76E55ED3ADB25B5D1666ECB4 /* Pods-AppCenterCrash-UI_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCenterCrash-UI_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AppCenterCrash-UI_Tests/Pods-AppCenterCrash-UI_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		90C574198456EE9B36693CA2 /* Pods-AppCenterCrash-UI_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCenterCrash-UI_Example.debug.xcconfig"; path = "Target Support Files/Pods-AppCenterCrash-UI_Example/Pods-AppCenterCrash-UI_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9DBA7F57ABA7F3C04A087107 /* Pods_AppCenterCrash_UI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppCenterCrash_UI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE92DB45B71DA28727002921 /* Pods-AppCenterCrash-UI_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCenterCrash-UI_Tests.release.xcconfig"; path = "Target Support Files/Pods-AppCenterCrash-UI_Tests/Pods-AppCenterCrash-UI_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E467376330AC1C0941A9A74F /* AppCenterCrash-UI.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = "AppCenterCrash-UI.podspec"; path = "../AppCenterCrash-UI.podspec"; sourceTree = "<group>"; };
+		E467376330AC1C0941A9A74F /* AppCenterCrash-UI.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "AppCenterCrash-UI.podspec"; path = "../AppCenterCrash-UI.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ED83F67820348A760038D96B /* AppCenterCrash-UI_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppCenterCrash-UI_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED83F67B20348A760038D96B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED83F67D20348A760038D96B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +85,6 @@
 				76E55ED3ADB25B5D1666ECB4 /* Pods-AppCenterCrash-UI_Tests.debug.xcconfig */,
 				BE92DB45B71DA28727002921 /* Pods-AppCenterCrash-UI_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

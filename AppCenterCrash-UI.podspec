@@ -1,24 +1,10 @@
-#
-# Be sure to run `pod lib lint AppCenterCrash-UI.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'AppCenterCrash-UI'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of AppCenterCrash-UI.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'A UI for reporting crashes adding a comment.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+This framework provides a UI for the user to add some more info to a crash that happened.
                        DESC
 
   s.homepage         = 'https://github.com/chbeer/AppCenterCrash-UI'
@@ -26,18 +12,19 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'chbeer' => 'christian.beer@chbeer.de' }
   s.source           = { :git => 'https://github.com/chbeer/AppCenterCrash-UI.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+   s.social_media_url = 'https://twitter.com/christian_beer'
 
-  s.platform = :osx
+  s.ios.deployment_target = "9.0"
   s.osx.deployment_target = "10.10"
+  
+  s.static_framework = true
+  s.swift_version = '4.0'
 
-  s.source_files = 'AppCenterCrash-UI/Classes/**/*'
+  s.ios.source_files   = 'AppCenterCrash-UI/*.{h,m,swift}','AppCenterCrash-UI/iOS/*'
+  s.osx.source_files   = 'AppCenterCrash-UI/*.{h,m,swift}','AppCenterCrash-UI/macOS/*'
+  
+  s.ios.resource = 'AppCenterCrash-UI/Assets/*','AppCenterCrash-UI/iOS/Assets/*'
+  s.osx.resource = 'AppCenterCrash-UI/Assets/*','AppCenterCrash-UI/macOS/Assets/*'
 
-  # s.resource_bundles = {
-  #   'AppCenterCrash-UI' => ['AppCenterCrash-UI/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'Cocoa'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AppCenter/Crashes'
 end
