@@ -5,7 +5,6 @@
 //  Created by Christian Beer on 14.04.20.
 //
 
-#import "AppCenterCrashUIManager+iOS.h"
 #import "AppCenterCrashUIManager.h"
 
 #import "AppCenterCrashDetailsWindowController.h"
@@ -15,7 +14,7 @@
 
 @implementation AppCenterCrashUIManager (macOS)
 
-- (BOOL) userConfirmationHandler:(NSArray<MSErrorReport*>*)reports callback:(void(^)(BOOL, NSArray<MSErrorAttachmentLog*>*))callback
+- (BOOL) userConfirmationHandler:(NSArray<MSErrorReport*>*)reports
 {
     NSString *appName = [NSBundle.mainBundle objectForInfoDictionaryKey:kCFBundleNameKey];
     

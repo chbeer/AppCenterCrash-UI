@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void) setupWithCompanyName:(NSString*)companyName privacyPolicyURL:(NSURL*)privacyPolicyURL;
 
-- (BOOL) userConfirmationHandler:(NSArray<MSErrorReport*>*)reports;// callback:(void(^)(BOOL, NSArray<MSErrorAttachmentLog*>*))callback;
+- (BOOL) userConfirmationHandler:(NSArray<MSErrorReport*>*)reports;
 
 @end
 

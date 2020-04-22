@@ -5,7 +5,6 @@ target 'AppCenterCrash-UI_Example' do
 
   target 'AppCenterCrash-UI_Tests' do
     inherit! :search_paths
-
     
   end
 end

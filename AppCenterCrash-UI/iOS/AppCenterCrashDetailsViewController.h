@@ -22,7 +22,9 @@
 /*! Initialize with details about the crash and the app's name 
  *
  * @param errorReports Details about the crash as given by AppCenter.
- * @param appName Name of the app to show in the dialog.
+ * @param companyName Name of the company to show in the dialog.
+ * @param applicationName Name of the app to show in the dialog.
+ * @param privacyPolicyURL URL for privacy policy
  * @return initialized instance.
  */
 - (instancetype) initWithErrorReports:(NSArray<MSErrorReport*>*)errorReports

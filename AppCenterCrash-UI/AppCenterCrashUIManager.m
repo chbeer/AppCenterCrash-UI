@@ -13,6 +13,9 @@
 @end
 
 @implementation AppCenterCrashUIManager
+{
+    NSArray<MSErrorAttachmentLog*> *_attachments;
+}
 
 + (instancetype) shared
 {
@@ -31,12 +34,8 @@
     self.companyName = companyName;
     self.privacyPolicyURL = privacyPolicyURL;
     
-    [[NSUserDefaults standardUserDefaults] setObject:@NO forKey:@"MSUserConfirmation"];
     [MSCrashes setDelegate:self];
     [MSCrashes setUserConfirmationHandler:^BOOL(NSArray<MSErrorReport *> * _Nonnull errorReports) {
-#if DEBUG
-        NSLog(@"🧚‍♂️ userConfirmationHandler");
-#endif
         return [self userConfirmationHandler:errorReports];
     }];
 }
@@ -45,48 +44,37 @@
 
 - (BOOL)crashes:(MSCrashes *)crashes shouldProcessErrorReport:(MSErrorReport *)errorReport
 {
-#if DEBUG
-    NSLog(@"🧚‍♂️ shouldProcessErrorReport...");
-#endif
     return YES;
 }
 
 - (void)crashes:(MSCrashes *)crashes willSendErrorReport:(MSErrorReport *)errorReport
 {
     // TODO: show activity indicator
-#if DEBUG
-    NSLog(@"🧚‍♂️ willSendErrorReport ...");
-#endif
 }
 
 - (void)crashes:(MSCrashes *)crashes didSucceedSendingErrorReport:(MSErrorReport *)errorReport
 {
     // TODO: show success
-#if DEBUG
-    NSLog(@"🧚‍♂️ didSucceedSendingErrorReport");
-#endif
 }
 
 - (void)crashes:(MSCrashes *)crashes didFailSendingErrorReport:(MSErrorReport *)errorReport withError:(NSError *)error
 {
     // TODO: present error
-#if DEBUG
-    NSLog(@"🧚‍♂️ didFailSendingErrorReport: %@", error);
-#endif
 }
 
 - (NSArray<MSErrorAttachmentLog *> *)attachmentsWithCrashes:(MSCrashes *)crashes forErrorReport:(MSErrorReport *)errorReport
 {
-#if DEBUG
-    NSLog(@"🧚‍♂️ attachmentsWithCrashes...");
-#endif
-    return @[];
+    NSArray<MSErrorAttachmentLog*> *attachments = _attachments;
+    _attachments = nil;
+    return attachments;
 }
 
 #pragma mark - AppCenterCrashUIDelegate
 
 - (void) appCenterCrashUIDidCancel
-{}
+{
+    [MSCrashes notifyWithUserConfirmation:MSUserConfirmationDontSend];
+}
 
 - (void) appCenterCrashUIShouldSendUserName:(NSString*)userName eMail:(NSString*)eMail comment:(NSString*)comment
 {
@@ -95,9 +83,8 @@
         [MSErrorAttachmentLog attachmentWithText:name filename:@"user"],
         [MSErrorAttachmentLog attachmentWithText:comment filename:@"description"]
     ];
-#if DEBUG
-    NSLog(@"🧚‍♂️ # attachments: %@", attachments);
-#endif
+    _attachments = attachments;
+    [MSCrashes notifyWithUserConfirmation:MSUserConfirmationSend];
 }
 
 @end
