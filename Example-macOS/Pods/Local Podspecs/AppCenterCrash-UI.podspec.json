@@ -1,0 +1,33 @@
+{
+  "name": "AppCenterCrash-UI",
+  "version": "0.1.0",
+  "summary": "A UI for reporting crashes adding a comment.",
+  "description": "This framework provides a UI for the user to add some more info to a crash that happened.",
+  "homepage": "https://github.com/chbeer/AppCenterCrash-UI",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "chbeer": "christian.beer@chbeer.de"
+  },
+  "source": {
+    "git": "https://github.com/chbeer/AppCenterCrash-UI.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0",
+    "osx": "10.10"
+  },
+  "ios": {
+    "source_files": "AppCenterCrash-UI/iOS/**/*"
+  },
+  "osx": {
+    "source_files": "AppCenterCrash-UI/macOS/**/*"
+  },
+  "dependencies": {
+    "AppCenter/Crashes": [
+
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+PODS:
+  - AppCenter/Core (3.1.0)
+  - AppCenter/Crashes (3.1.0):
+    - AppCenter/Core
+  - AppCenterCrash-UI (0.1.0):
+    - AppCenter/Crashes
+
+DEPENDENCIES:
+  - AppCenterCrash-UI (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - AppCenter
+
+EXTERNAL SOURCES:
+  AppCenterCrash-UI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AppCenter: a1c30c47b7882a04a615ffa5ab26c007326436d8
+  AppCenterCrash-UI: d81fcbc03048ca6968207c7b88cb711ea8ccf2ba
+
+PODFILE CHECKSUM: 29c78b7aec7737fec4363e980631ae0aa1c1ee19
+
+COCOAPODS: 1.8.4

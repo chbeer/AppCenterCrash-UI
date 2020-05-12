@@ -1,0 +1,6 @@
+framework module AppCenterCrash_UI {
+  umbrella header "AppCenterCrash-UI-umbrella.h"
+
+  export *
+  module * { export * }
+}
