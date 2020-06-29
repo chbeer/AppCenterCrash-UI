@@ -78,11 +78,14 @@
 
 - (void) appCenterCrashUIShouldSendUserName:(NSString*)userName eMail:(NSString*)eMail comment:(NSString*)comment
 {
-    NSString *name = [NSString stringWithFormat:@"%@ (%@)", userName, eMail];
-    NSArray<MSErrorAttachmentLog*> *attachments = @[
-        [MSErrorAttachmentLog attachmentWithText:name filename:@"user"],
-        [MSErrorAttachmentLog attachmentWithText:comment filename:@"description"]
-    ];
+    NSMutableArray<MSErrorAttachmentLog*> *attachments = [NSMutableArray array];
+    if (userName.length > 0 || eMail.length > 0) {
+        NSString *name = [NSString stringWithFormat:@"%@ (%@)", userName, eMail];
+        [attachments addObject:[MSErrorAttachmentLog attachmentWithText:name filename:@"user"]];
+    }
+    if (comment.length > 0) {
+        [attachments addObject:[MSErrorAttachmentLog attachmentWithText:comment filename:@"description"]];
+    }
     _attachments = attachments;
     [MSCrashes notifyWithUserConfirmation:MSUserConfirmationSend];
 }
