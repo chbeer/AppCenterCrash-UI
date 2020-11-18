@@ -23,9 +23,11 @@
                                                                                                       applicationName:appName
                                                                                                      privacyPolicyURL:self.privacyPolicyURL
                                                                                                        askUserDetails:YES];
-    ctrl.delegate = self;
+    ctrl.delegate = (id<AppCenterCrashUIDelegate>)self;
     
     [ctrl askCrashReportDetails];
+    
+    return YES;
 }
 
 @end

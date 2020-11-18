@@ -22,7 +22,7 @@
                                                                                                       companyName:self.companyName
                                                                                                   applicationName:appName
                                                                                                  privacyPolicyURL:self.privacyPolicyURL];
-    ctrl.delegate = self;
+    ctrl.delegate = (id<AppCenterCrashUIDelegate>)self;
     
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:ctrl];
     nc.modalPresentationStyle = UIModalPresentationFormSheet;

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AppCenterCrash-UI'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'A UI for reporting crashes adding a comment.'
 
   s.description      = <<-DESC
@@ -26,5 +26,5 @@ This framework provides a UI for the user to add some more info to a crash that 
   s.ios.resource = 'AppCenterCrash-UI/Assets/*','AppCenterCrash-UI/iOS/Assets/*'
   s.osx.resource = 'AppCenterCrash-UI/Assets/*','AppCenterCrash-UI/macOS/Assets/*'
 
-  s.dependency 'AppCenter/Crashes'
+  s.dependency 'AppCenter/Crashes', '~> 3.0'
 end
