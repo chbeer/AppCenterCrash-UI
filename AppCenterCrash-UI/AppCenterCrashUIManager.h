@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-@interface AppCenterCrashUIManager: NSObject <MSCrashesDelegate>
+@interface AppCenterCrashUIManager: NSObject <MSACCrashesDelegate>
 
 @property (nonatomic, copy) NSString *companyName;
 @property (nonatomic, copy) NSURL    *privacyPolicyURL;
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void) setupWithCompanyName:(NSString*)companyName privacyPolicyURL:(NSURL*)privacyPolicyURL;
 
-- (BOOL) userConfirmationHandler:(NSArray<MSErrorReport*>*)reports;
+- (BOOL) userConfirmationHandler:(NSArray<MSACErrorReport*>*)reports;
 
 @end
 

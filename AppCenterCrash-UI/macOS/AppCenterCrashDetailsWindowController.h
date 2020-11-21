@@ -62,7 +62,7 @@
     NSURL             *_privacyPolicyURL;
     NSString          *_applicationName;
     
-    NSArray<MSErrorReport*>   *_errorReports;
+    NSArray<MSACErrorReport*> *_errorReports;
     NSString                  *_userName;
     NSString                  *_userEmail;
     
@@ -80,7 +80,7 @@
 @property (nonatomic, retain) NSString *userEmail;
 
 
-- (instancetype)initWithErrorReports:(NSArray<MSErrorReport*>*)errorReports
+- (instancetype)initWithErrorReports:(NSArray<MSACErrorReport*>*)errorReports
                          companyName:(NSString *)companyName
                      applicationName:(NSString *)applicationName
                       privacyPolicyURL:(NSURL*)privacyPolicyURL

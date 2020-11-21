@@ -14,7 +14,7 @@
 
 @implementation AppCenterCrashUIManager (macOS)
 
-- (BOOL) userConfirmationHandler:(NSArray<MSErrorReport*>*)reports
+- (BOOL) userConfirmationHandler:(NSArray<MSACErrorReport*>*)reports
 {
     NSString *appName = [NSBundle.mainBundle objectForInfoDictionaryKey:kCFBundleNameKey];
     

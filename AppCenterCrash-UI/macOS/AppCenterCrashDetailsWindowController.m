@@ -61,7 +61,7 @@ const CGFloat kCommentsHeight = 105;
 @synthesize userEmail = _userEmail;
 
 
-- (instancetype)initWithErrorReports:(NSArray<MSErrorReport*>*)errorReports
+- (instancetype)initWithErrorReports:(NSArray<MSACErrorReport*>*)errorReports
                          companyName:(NSString *)companyName
                      applicationName:(NSString *)applicationName
                     privacyPolicyURL:(NSURL*)privacyPolicyURL

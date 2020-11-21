@@ -9,12 +9,12 @@
 
 #import <AppCenter/AppCenter.h>
 
-@interface AppCenterCrashUIManager (Private) <MSCrashesDelegate, AppCenterCrashUIDelegate>
+@interface AppCenterCrashUIManager (Private) <MSACCrashesDelegate, AppCenterCrashUIDelegate>
 @end
 
 @implementation AppCenterCrashUIManager
 {
-    NSArray<MSErrorAttachmentLog*> *_attachments;
+    NSArray<MSACErrorAttachmentLog*> *_attachments;
 }
 
 + (instancetype) shared
@@ -34,37 +34,37 @@
     self.companyName = companyName;
     self.privacyPolicyURL = privacyPolicyURL;
     
-    [MSCrashes setDelegate:self];
-    [MSCrashes setUserConfirmationHandler:^BOOL(NSArray<MSErrorReport *> * _Nonnull errorReports) {
+    [MSACCrashes setDelegate:self];
+    [MSACCrashes setUserConfirmationHandler:^BOOL(NSArray<MSACErrorReport *> * _Nonnull errorReports) {
         return [self userConfirmationHandler:errorReports];
     }];
 }
 
-#pragma mark - MSCrashesDelegate
+#pragma mark - MSACCrashesDelegate
 
-- (BOOL)crashes:(MSCrashes *)crashes shouldProcessErrorReport:(MSErrorReport *)errorReport
+- (BOOL)crashes:(MSACCrashes *)crashes shouldProcessErrorReport:(MSACErrorReport *)errorReport
 {
     return YES;
 }
 
-- (void)crashes:(MSCrashes *)crashes willSendErrorReport:(MSErrorReport *)errorReport
+- (void)crashes:(MSACCrashes *)crashes willSendErrorReport:(MSACErrorReport *)errorReport
 {
     // TODO: show activity indicator
 }
 
-- (void)crashes:(MSCrashes *)crashes didSucceedSendingErrorReport:(MSErrorReport *)errorReport
+- (void)crashes:(MSACCrashes *)crashes didSucceedSendingErrorReport:(MSACErrorReport *)errorReport
 {
     // TODO: show success
 }
 
-- (void)crashes:(MSCrashes *)crashes didFailSendingErrorReport:(MSErrorReport *)errorReport withError:(NSError *)error
+- (void)crashes:(MSACCrashes *)crashes didFailSendingErrorReport:(MSACErrorReport *)errorReport withError:(NSError *)error
 {
     // TODO: present error
 }
 
-- (NSArray<MSErrorAttachmentLog *> *)attachmentsWithCrashes:(MSCrashes *)crashes forErrorReport:(MSErrorReport *)errorReport
+- (NSArray<MSACErrorAttachmentLog *> *)attachmentsWithCrashes:(MSACCrashes *)crashes forErrorReport:(MSACErrorReport *)errorReport
 {
-    NSArray<MSErrorAttachmentLog*> *attachments = _attachments;
+    NSArray<MSACErrorAttachmentLog*> *attachments = _attachments;
     _attachments = nil;
     return attachments;
 }
@@ -73,21 +73,21 @@
 
 - (void) appCenterCrashUIDidCancel
 {
-    [MSCrashes notifyWithUserConfirmation:MSUserConfirmationDontSend];
+    [MSACCrashes notifyWithUserConfirmation:MSACUserConfirmationDontSend];
 }
 
 - (void) appCenterCrashUIShouldSendUserName:(NSString*)userName eMail:(NSString*)eMail comment:(NSString*)comment
 {
-    NSMutableArray<MSErrorAttachmentLog*> *attachments = [NSMutableArray array];
+    NSMutableArray<MSACErrorAttachmentLog*> *attachments = [NSMutableArray array];
     if (userName.length > 0 || eMail.length > 0) {
         NSString *name = [NSString stringWithFormat:@"%@ (%@)", userName, eMail];
-        [attachments addObject:[MSErrorAttachmentLog attachmentWithText:name filename:@"user"]];
+        [attachments addObject:[MSACErrorAttachmentLog attachmentWithText:name filename:@"user"]];
     }
     if (comment.length > 0) {
-        [attachments addObject:[MSErrorAttachmentLog attachmentWithText:comment filename:@"description"]];
+        [attachments addObject:[MSACErrorAttachmentLog attachmentWithText:comment filename:@"description"]];
     }
     _attachments = attachments;
-    [MSCrashes notifyWithUserConfirmation:MSUserConfirmationSend];
+    [MSACCrashes notifyWithUserConfirmation:MSACUserConfirmationSend];
 }
 
 @end

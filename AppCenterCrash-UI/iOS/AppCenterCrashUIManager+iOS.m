@@ -16,7 +16,7 @@
 
 - (BOOL) userConfirmationHandler:(NSArray<MSErrorReport*>*)reports// callback:(void(^)(BOOL, NSArray<MSErrorAttachmentLog*>*))callback
 {
-    NSString *appName = [NSBundle.mainBundle objectForInfoDictionaryKey:kCFBundleNameKey];
+    NSString *appName = (NSString*)[NSBundle.mainBundle objectForInfoDictionaryKey:kCFBundleNameKey];
     
     AppCenterCrashDetailsViewController *ctrl = [[AppCenterCrashDetailsViewController alloc] initWithErrorReports:reports
                                                                                                       companyName:self.companyName
