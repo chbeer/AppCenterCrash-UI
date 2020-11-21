@@ -15,7 +15,7 @@
 
 @property (nonatomic, weak) id<AppCenterCrashUIDelegate> delegate;
                                                                                                    
-@property (nonatomic, strong, readonly) NSArray<MSErrorReport*> *errorReports;
+@property (nonatomic, strong, readonly) NSArray<MSACErrorReport*> *errorReports;
 @property (nonatomic, strong, readonly) NSString                *companyName;
 @property (nonatomic, strong, readonly) NSString                *applicationName;
 
@@ -27,7 +27,7 @@
  * @param privacyPolicyURL URL for privacy policy
  * @return initialized instance.
  */
-- (instancetype) initWithErrorReports:(NSArray<MSErrorReport*>*)errorReports
+- (instancetype) initWithErrorReports:(NSArray<MSACErrorReport*>*)errorReports
                           companyName:(NSString *)companyName
                       applicationName:(NSString *)applicationName
                       privacyPolicyURL:(NSURL*)privacyPolicyURL;

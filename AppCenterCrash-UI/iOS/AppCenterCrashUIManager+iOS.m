@@ -14,7 +14,7 @@
 
 @implementation AppCenterCrashUIManager (iOS)
 
-- (BOOL) userConfirmationHandler:(NSArray<MSErrorReport*>*)reports// callback:(void(^)(BOOL, NSArray<MSErrorAttachmentLog*>*))callback
+- (BOOL) userConfirmationHandler:(NSArray<MSACErrorReport*>*)reports// callback:(void(^)(BOOL, NSArray<MSErrorAttachmentLog*>*))callback
 {
     NSString *appName = (NSString*)[NSBundle.mainBundle objectForInfoDictionaryKey:kCFBundleNameKey];
     

@@ -54,7 +54,7 @@ NSString *CBLocalizedString(NSString *key, NSString *comment) {
 
 #pragma mark -
 
-- (instancetype) initWithErrorReports:(NSArray<MSErrorReport*>*)errorReports
+- (instancetype) initWithErrorReports:(NSArray<MSACErrorReport*>*)errorReports
                           companyName:(NSString *)companyName
                       applicationName:(NSString *)applicationName
                      privacyPolicyURL:(NSURL*)privacyPolicyURL
