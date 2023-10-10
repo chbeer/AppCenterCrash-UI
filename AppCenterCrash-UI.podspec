@@ -26,9 +26,8 @@ This framework provides a UI for the user to add some more info to a crash that 
   s.ios.source_files   = 'AppCenterCrash-UI/*.{h,m,swift}','AppCenterCrash-UI/iOS/*'
   s.osx.source_files   = 'AppCenterCrash-UI/*.{h,m,swift}','AppCenterCrash-UI/macOS/*'
   
-  s.resource = 'AppCenterCrash-UI/Assets/*'
-  s.ios.resource = 'AppCenterCrash-UI/iOS/Assets/*'
-  s.osx.resource = 'AppCenterCrash-UI/macOS/Assets/*'
+  s.ios.resource = 'AppCenterCrash-UI/Assets/*','AppCenterCrash-UI/iOS/Assets/*'
+  s.osx.resource = 'AppCenterCrash-UI/Assets/*','AppCenterCrash-UI/macOS/Assets/*'
 
   s.dependency 'AppCenter/Crashes', '~> 4.0'
 end
